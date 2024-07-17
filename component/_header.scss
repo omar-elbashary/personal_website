@@ -1,0 +1,103 @@
+.header {
+    padding: 3rem 0;
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 0;
+    background-color: var(--color-background);
+    z-index: 1;
+  }
+  
+  .header::before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    height: 100%;
+    width: 100vw;
+    border-bottom: 0.1rem solid var(--color-input-border);
+    background-color: var(--color-background);
+    top: 0.1rem;
+  }
+  
+  .navigation {
+    transition: var(--transition-timing);
+    background-color: var(--color-background);
+  }
+  
+  .navigation__list {
+    display: flex;
+    gap: 2rem;
+  }
+  
+  .navigation__link:link,
+  .navigation__link:visited {
+    text-decoration: none;
+    font-weight: var(--font-weight-medium);
+  }
+  
+  .navigation__link:hover,
+  .navigation__link:active {
+    text-decoration: underline;
+    color: var(--color-text);
+  }
+  
+  .container:has(#bio:target) .navigation__bio,
+  .container:has(#skills:target) .navigation__skills,
+  .container:has(#media:target) .navigation__media,
+  .container:has(#projects:target) .navigation__projects,
+  .container:has(#clients:target) .navigation__clients,
+  .container:has(#contact:target) .navigation__contact {
+    color: var(--color-blue);
+    text-decoration: underline;
+    font-weight: var(--font-weight-bold);
+  }
+  
+  .burger-menu__checkbox {
+    display: none;
+  }
+  
+  .toggle {
+    display: flex;
+    gap: 1rem;
+    margin-left: auto;
+  }
+  .toggle__title {
+    font-weight: var(--font-weight-medium);
+    font-size: var(--font-size-18);
+  }
+  
+  .toggle__checkbox {
+    display: none;
+  }
+  .toggle__label {
+    display: block;
+    position: relative;
+    width: 4.5rem;
+    height: 2.2rem;
+    border-radius: 1.5rem;
+    padding: 0.3rem 0.4rem;
+    background-color: var(--color-black);
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .toggle__label::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    transition: 0.3s;
+    background-color: var(--color-white);
+  }
+  
+  .toggle__checkbox:checked + .toggle__label {
+    background-color: var(--color-white);
+  }
+  
+  .toggle__checkbox:checked + .toggle__label::after {
+    transform: translateX(2.1rem);
+    background-color: var(--color-green);
+  }
+  
